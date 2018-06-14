@@ -45,7 +45,7 @@ RUN mkdir -p ${HOME} && \
       fluent-plugin-kubernetes_metadata_filter \
       fluent-plugin-rewrite-tag-filter:${FLUENTD_PLUGIN_REWRITE_TAG_FILTER_VERSION} \
       fluent-plugin-secure-forward \
-     'fluent-plugin-systemd:<0.1.0' \
+#     'fluent-plugin-systemd:<0.1.0' \
       fluent-plugin-viaq_data_model \
       fluent-plugin-gelf-hs \
       systemd-journal \
