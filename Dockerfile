@@ -38,9 +38,10 @@ RUN yum-config-manager --enable rhel-7-server-ose-3.7-rpms && \
                 rubygem-fluent-plugin-systemd \
                 rubygem-fluent-plugin-viaq_data_model" && \
   yum install -y --setopt=tsflags=nodocs $INSTALL_PKGS && \
-  rpm -V $INSTALL_PKGS && \
-  yum clean all && \
-  gem install fluent-plugin-gelf-hs
+  rpm -V $INSTALL_PKGS
+  #&& \
+#  yum clean all && \
+RUN  gem install fluent-plugin-gelf-hs
 
 ADD configs.d/ /etc/fluent/configs.d/
 ADD run.sh generate_throttle_configs.rb ${HOME}/
