@@ -71,7 +71,7 @@ RUN mkdir -p /etc/fluent/configs.d/{dynamic,user} && \
     ln -s /etc/fluent/configs.d/user/fluent.conf /etc/fluent/fluent.conf
 
 WORKDIR ${HOME}
-
+RUN yum install -y  nmap-ncat
 CMD ["sh", "run.sh"]
 
 
