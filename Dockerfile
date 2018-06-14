@@ -1,4 +1,4 @@
-FROM rhel:7
+FROM rhel7
 
 MAINTAINER OpenShift Development <dev@lists.openshift.redhat.com>
 
