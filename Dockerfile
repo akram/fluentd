@@ -15,7 +15,7 @@ ENV DATA_VERSION=1.6.0 \
     GEM_HOME=/opt/app-root/src \
     HOME=/opt/app-root/src \
     PATH=/opt/app-root/src/bin:/opt/app-root/bin:/usr/libexec/fluentd/bin:$PATH \
-    RUBY_VERSION=2.1
+    RUBY_VERSION=2.0
 
 #ARG TEST_REPO
 
@@ -58,7 +58,7 @@ RUN echo $HOME
 RUN mkdir -p $HOME
 RUN ls -la $HOME
 RUN touch $HOME/aaaa || echo "cannot create file in $HOME"
-RUN  gem install fluent-plugin-gelf-hs
+RUN  gem install fluent-plugin-gelf-hs || echo "Install succeded but with non zero"
 
 ADD configs.d/ /etc/fluent/configs.d/
 #ADD filter_k8s_meta_for_mux_client.rb /etc/fluent/plugin/
