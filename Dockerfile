@@ -17,7 +17,7 @@ ENV DATA_VERSION=1.6.0 \
     PATH=/opt/app-root/src/bin:/opt/app-root/bin:/usr/libexec/fluentd/bin:$PATH \
     RUBY_VERSION=2.0
 
-ARG TEST_REPO
+#ARG TEST_REPO
 
 LABEL io.k8s.description="Fluentd container for collecting of docker container logs" \
       io.k8s.display-name="Fluentd ${FLUENTD_VERSION}" \
@@ -30,7 +30,7 @@ LABEL io.k8s.description="Fluentd container for collecting of docker container l
 
 USER 0
 
-RUN test -n "${TEST_REPO}" && curl -s -o /etc/yum.repos.d/test.repo ${TEST_REPO}
+#RUN test -n "${TEST_REPO}" && curl -s -o /etc/yum.repos.d/test.repo ${TEST_REPO}
 
 RUN yum-config-manager --enable rhel-7-server-ose-3.9-rpms && \
   INSTALL_PKGS="fluentd-${FLUENTD_VERSION} \
@@ -57,9 +57,9 @@ RUN yum-config-manager --enable rhel-7-server-ose-3.9-rpms && \
 RUN  gem install fluent-plugin-gelf-hs
 
 ADD configs.d/ /etc/fluent/configs.d/
-ADD filter_k8s_meta_for_mux_client.rb /etc/fluent/plugin/
-ADD out_syslog_buffered.rb out_syslog.rb /etc/fluent/plugin/
-ADD parser_viaq_docker_audit.rb viaq_docker_audit.rb /etc/fluent/plugin/
+#ADD filter_k8s_meta_for_mux_client.rb /etc/fluent/plugin/
+#ADD out_syslog_buffered.rb out_syslog.rb /etc/fluent/plugin/
+#ADD parser_viaq_docker_audit.rb viaq_docker_audit.rb /etc/fluent/plugin/
 ADD run.sh generate_throttle_configs.rb generate_syslog_config.rb ${HOME}/
 
 RUN mkdir -p /etc/fluent/configs.d/{dynamic,user} && \
