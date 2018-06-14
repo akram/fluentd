@@ -15,7 +15,7 @@ ENV DATA_VERSION=1.6.0 \
     GEM_HOME=/opt/app-root/src \
     HOME=/opt/app-root/src \
     PATH=/opt/app-root/src/bin:/opt/app-root/bin:/usr/libexec/fluentd/bin:$PATH \
-    RUBY_VERSION=2.0
+    RUBY_VERSION=2.1
 
 #ARG TEST_REPO
 
