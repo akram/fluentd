@@ -25,7 +25,7 @@ LABEL io.k8s.description="Fluentd container for collecting of docker container l
       release="1" \
       architecture=x86_64
 
-RUN yum-config-manager --enable rhel-7-server-ose-3.6-rpms && \
+RUN yum-config-manager --enable rhel-7-server-ose-3.7-rpms && \
   INSTALL_PKGS="fluentd-${FLUENTD_VERSION} \
                 hostname \
                 bc \
