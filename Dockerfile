@@ -55,6 +55,7 @@ RUN yum-config-manager --enable rhel-7-server-ose-3.9-rpms && \
 #RUN yum -y install /tmp/*.rpm
 
 RUN echo $HOME
+RUN mkdir -p $HOME
 RUN ls -la $HOME
 RUN touch $HOME/aaaa || echo "cannot create file in $HOME"
 RUN  gem install fluent-plugin-gelf-hs
