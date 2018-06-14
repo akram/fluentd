@@ -39,7 +39,7 @@ RUN yum-config-manager --enable rhel-7-server-ose-3.7-rpms && \
                 rubygem-fluent-plugin-viaq_data_model" && \
   yum install -y --setopt=tsflags=nodocs $INSTALL_PKGS 
   #&& \
-RUN rpm -V $INSTALL_PKGS
+RUN  INSTALL_PKGS="fluentd-${FLUENTD_VERSION} rpm -V $INSTALL_PKGS
   #&& \
 #  yum clean all && \
 RUN  gem install fluent-plugin-gelf-hs
