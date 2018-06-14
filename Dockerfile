@@ -64,8 +64,8 @@ ADD configs.d/ /etc/fluent/configs.d/
 #ADD filter_k8s_meta_for_mux_client.rb /etc/fluent/plugin/
 #ADD out_syslog_buffered.rb out_syslog.rb /etc/fluent/plugin/
 #ADD parser_viaq_docker_audit.rb viaq_docker_audit.rb /etc/fluent/plugin/
-ADD run.sh generate_throttle_configs.rb generate_syslog_config.rb ${HOME}/
-
+ADD run.sh generate_throttle_configs.rb ${HOME}/
+# ADD generate_syslog_config.rb 
 RUN mkdir -p /etc/fluent/configs.d/{dynamic,user} && \
     chmod 777 /etc/fluent/configs.d/dynamic && \
     ln -s /etc/fluent/configs.d/user/fluent.conf /etc/fluent/fluent.conf
